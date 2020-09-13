@@ -32,10 +32,16 @@ public class Stove {
 	public void displayStove() {
 		boolean somethingHot = false;
 		for(Burner b: burners) {
+			//display each burner
+			b.display();
+			
+			//Check if any are super hot
 			if(b.getMyTemperature() == Burner.Temperature.BLAZING) {
 				somethingHot = true;
 			}
 		}
+		
+		//If a burner is blazing, tell the user
 		if(somethingHot == true) {
 			System.out.println("RED LIGHT - HOT BURNER ALERT");
 		}
